@@ -13,7 +13,9 @@ For the gradient descent I didn't want to use derivates to calculate the slope o
 
 ## Accuracy
 After some tweaking I found that it was relatively accurate. I compared it to a repository I built a couple days ago based on Andrew Ng's algorithms. Run on the same single variate dataset here are the results:
+
 This project: `Current theta:  [0.08975785196462276 0.7646112377458362]  cost:  5.896308082090673`
+
 Andrew Ng: `Current theta:  [0.052211 0.735307]  cost:  6.052326`
 
 With some tweaking my algorithm and hyperparameters could probably be improved to further match Andrew Ng's model. So all and all I would call this experiment a huge success!
