@@ -74,7 +74,7 @@ func individualPredict(X float64, theta []float64) float64 {
 }
 
 func gradientDescent(X []float64, y []float64, m int, theta []float64) []float64 {
-	learningRate := .001
+	learningRate := .00085
 	iterations := 1000
 
 	currentCost := cost(X, y, m, theta)
@@ -86,8 +86,11 @@ func gradientDescent(X []float64, y []float64, m int, theta []float64) []float64
 		tempTheta := []float64{0, 0}
 		for j := 0; j <= m; j++ {
 			iCost := individualCost(X[i], y[i], theta)
-			tempTheta[0] = tempTheta[0] + float64(learningRate)*iCost*X[i]
-			tempTheta[1] = tempTheta[1] + float64(learningRate)*iCost
+			//I know this should be -= but its += and it works
+			//I'm dumbfounded as I cant find my mistake anywhere
+			//It still works tho, if that helps
+			tempTheta[0] += float64(learningRate) * iCost * X[i]
+			tempTheta[1] += float64(learningRate) * iCost
 
 		}
 		theta[0] = tempTheta[0] / float64(m)
